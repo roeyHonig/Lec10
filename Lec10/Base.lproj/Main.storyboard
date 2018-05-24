@@ -5,25 +5,63 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Movies Table View Controller-->
         <scene sceneID="fN3-E8-cRZ">
             <objects>
-                <tableViewController id="2eo-FC-GFj" sceneMemberID="viewController">
+                <tableViewController id="2eo-FC-GFj" customClass="MoviesTableViewController" customModule="Lec10" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ggb-9R-kkV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="t4N-cV-AKK">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="158" id="t4N-cV-AKK" customClass="MovieTableViewCell" customModule="Lec10" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="158"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t4N-cV-AKK" id="Zxh-zK-cVS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="157.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0MD-dV-mob">
+                                            <rect key="frame" x="24" y="24" width="327" height="109.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" image="icons8-film_reel_filled" translatesAutoresizingMaskIntoConstraints="NO" id="JIP-WQ-O8a">
+                                                    <rect key="frame" x="0.0" y="0.0" width="159.5" height="109.5"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bcg-65-WfC">
+                                                    <rect key="frame" x="167.5" y="0.0" width="159.5" height="109.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbF-qr-hs7">
+                                                            <rect key="frame" x="0.0" y="0.0" width="159.5" height="55"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uG1-Ej-ODk">
+                                                            <rect key="frame" x="0.0" y="55" width="159.5" height="54.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0MD-dV-mob" secondAttribute="bottom" constant="16" id="BxT-Pn-IQp"/>
+                                        <constraint firstItem="0MD-dV-mob" firstAttribute="leading" secondItem="Zxh-zK-cVS" secondAttribute="leadingMargin" constant="16" id="Fhm-ep-xqS"/>
+                                        <constraint firstItem="0MD-dV-mob" firstAttribute="top" secondItem="Zxh-zK-cVS" secondAttribute="topMargin" constant="16" id="IhF-qd-4Aq"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0MD-dV-mob" secondAttribute="trailing" constant="16" id="YSb-hk-CQv"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="relaseYear" destination="uG1-Ej-ODk" id="LlW-RF-NvO"/>
+                                    <outlet property="title" destination="qbF-qr-hs7" id="SE7-OI-cU3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -34,7 +72,10 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYt-7j-T6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="130"/>
+            <point key="canvasLocation" x="1237.5999999999999" y="129.98500749625188"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-film_reel_filled" width="25" height="25"/>
+    </resources>
 </document>
