@@ -99,5 +99,21 @@ class MoviesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movie = movies[indexPath.row]
+        performSegue(withIdentifier: "moveMaster", sender: movie)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // movie not nil
+        // going to DetailsViewController , that is making sure the destinataion is in fact a ReailsViewController
+        
+        guard let detailVC = segue.destination as? MovieDetailsViewController,
+            let movie = sender as? Movie else {
+            return
+        }
+    }
 
 }

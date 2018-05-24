@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MovieDetailsViewController: UIViewController {
+    
+    var movie: Movie! // i know for sure that there will be a Movie
+    // because the seguw will bring it to me as an argument
 
     override func viewDidLoad() {
         super.viewDidLoad()
