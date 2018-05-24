@@ -9,7 +9,16 @@
 import UIKit
 
 class MasterViewController: UIViewController {
-
+    
+    var movie: Movie!
+    
+    @IBAction func saveDetails(_ sender: UIButton) {
+        guard let title = details.text else {
+            return
+        }
+        movie.title = title // done?  struct, we only got by value
+    }
+    @IBOutlet weak var details: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
