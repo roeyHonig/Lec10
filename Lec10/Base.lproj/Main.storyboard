@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="158" id="t4N-cV-AKK" customClass="MovieTableViewCell" customModule="Lec10" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="158" id="t4N-cV-AKK" customClass="MovieTableViewCell" customModule="Lec10" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="158"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t4N-cV-AKK" id="Zxh-zK-cVS">
@@ -28,7 +28,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0MD-dV-mob">
                                             <rect key="frame" x="24" y="24" width="327" height="109.5"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" image="icons8-film_reel_filled" translatesAutoresizingMaskIntoConstraints="NO" id="JIP-WQ-O8a">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" image="icons8-film_reel_filled" translatesAutoresizingMaskIntoConstraints="NO" id="JIP-WQ-O8a">
                                                     <rect key="frame" x="0.0" y="0.0" width="159.5" height="109.5"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bcg-65-WfC">
@@ -59,6 +59,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="poster" destination="JIP-WQ-O8a" id="ZOX-or-19y"/>
                                     <outlet property="relaseYear" destination="uG1-Ej-ODk" id="LlW-RF-NvO"/>
                                     <outlet property="title" destination="qbF-qr-hs7" id="SE7-OI-cU3"/>
                                 </connections>

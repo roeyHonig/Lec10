@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MoviesTableViewController: UITableViewController {
 
@@ -29,23 +30,30 @@ class MoviesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return movies.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        // force casting
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieTableViewCell
 
         // Configure the cell...
-
+        cell.movie = movies[indexPath.row] // support for clicking on the item
+        cell.title.text = movies[indexPath.row].title
+        cell.relaseYear.text = movies[indexPath.row].date
+        
+        let url = URL(string: movies[indexPath.row].image)
+        
+        cell.poster.sd_setImage(with: url)
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
